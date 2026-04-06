@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Times</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2ed380;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: rgb(0, 66, 35);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        .info {
+            margin: 5px 0;
+            color: #ffffff;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .sem-times {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Times de Futebol</h1>
+
+    {% for time in times %}
+        <div class="card">
+            <h2>{{ time.nome }}</h2>
+
+            <p class="info"><span class="label">Cidade:</span> {{ time.cidade }}</p>
+            <p class="info"><span class="label">Estado:</span> {{ time.estado }}</p>
+            <p class="info"><span class="label">Fundação:</span> {{ time.ano_fundacao }}</p>
+            <p class="info"><span class="label">Estádio:</span> {{ time.estadio }}</p>
+        </div>
+
+    {% empty %}
+        <div class="sem-times">
+            <p>Nenhum time cadastrado.</p>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
