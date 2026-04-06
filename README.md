@@ -66,6 +66,7 @@ python -m venv venv
 ```
 venv\Scripts\activate
 ```
+Se der erro no VSCode, troque o terminal para Command Prompt.
 
 ### 3. Instalar dependências
 
