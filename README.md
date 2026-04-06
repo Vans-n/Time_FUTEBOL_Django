@@ -66,7 +66,7 @@ python -m venv venv
 ```
 venv\Scripts\activate
 ```
-Se der erro no VSCode, troque o terminal para Command Prompt.
+Se ocorrer erro ao ativar o ambiente virtual no VSCode, utilize o terminal Command Prompt, pois o PowerShell pode bloquear a execução de scripts.
 
 ### 3. Instalar dependências
 
